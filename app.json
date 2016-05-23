@@ -1,0 +1,6 @@
+{
+  "name": "Devoir 1 - GTI525",
+  "description": "Devoir présentant les applications Java EE sur Tomcat embarqué, déployé sur Heroku",
+  "repository": "https://github.com/heroku/devcenter-embedded-tomcat",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Tomcat-logo.svg"
+}
