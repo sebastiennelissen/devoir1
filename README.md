@@ -1,9 +1,10 @@
 #Devoir 1
-=======
-Votre nom: *Veuillez inscrire votre nom complet ici*
 
-Votre URL sur Heroku: *Veuillez fournir l'URL d'accès à Heroku ici*
-=======
+##Vos informations
+
+*Veuillez inscrire votre nom complet ici et l'URL d'accès à votre application sur Heroku ici*
+
+
 ##Correction 
 
 *Votre correction sera fournie à cet endroit*
@@ -14,26 +15,22 @@ Votre URL sur Heroku: *Veuillez fournir l'URL d'accès à Heroku ici*
 
 **Contexte**
 
-Vous avez acheté un système d’affichage d’images protégées par tatouage numérique (watermarking). Le watermarking est une technique qui permet d’inclure du code dans une image afin d’en protéger le contenu. Ici, le watermark est simplement un texte en transparence qui est ajouté sur l’image. Pour faire ceci, les requêtes d’affichage d’images passent par un Servlet, soit WatermarkServlet. 
+Vous avez acheté un système d’affichage d’images protégées par tatouage numérique (watermarking). Le watermarking est une technique qui permet d’inclure du code dans une image afin d’en protéger le contenu. Ici, le watermark est simplement un texte en transparence qui est ajouté sur l’image. Pour faire ceci, les requêtes d’affichage d’images passent par un Servlet, soit WatermarkServlet.
 
 Donc lors de l’affichage d’une étiquette d’une image, en y intégrant un mapping qui sera compris dans le fichier web.xml, l’image sera affichée par le Servlet de watermarking. Cependant, même si la requête HTTP est faite sur une image située dans le répertoire de vignettes, le servlet va plutôt remplacer le nom du répertoire de vignette par le nom du répertoire de fichiers originaux, qui lui ne devrait pas être connu du côté client. Il va alors intégrer le watermark à l’image originale s’il s’agit d’un aperçu d’image et ensuite écrit directement dans la réponse le fichier de l’image. Le résultat est que l’utilisateur reçoit une image sans en avoir la source sur le serveur.  
 
-Votre compagnie a déjà réalisé le contexte d’utilisation. Les pages JSP sont créées de même que les classes du domaine d’affaire. Les modifications au script de watermarking ont été faites afin de faire le mapping vers un dossier caché et pour ne pas ajouter le watermark si l’utilisateur a payé pour l’image (dans ce cas, si le champ de carte de crédit n’est pas vide). Il vous reste donc à intégrer le tout.
+Votre compagnie a déjà réalisé le contexte d’utilisation. Les pages JSP sont créées de même que les classes du domaine d’affaire. Les modifications au script de watermarking ont été faites afin de faire le mapping vers un dossier caché et pour ne pas ajouter le watermark si l’utilisateur a payé pour l’image (dans ce cas, si le champ de carte de crédit n’est pas vide). Il vous reste donc à intégrer le tout, dans une application pré-configurée pour être déployée sur Heroku.
 
 **Instructions**
 
-Pour ce faire, vous aurez à créer le Servlet de contrôle du flot de navigationainsi que le fichier web.xml qui appellera les bons servlets et qui déclarera les variables d’initialisation nécessaires. Voici la liste des fichiers qui vous dont donnés et leur rôle.
+Pour ce faire, vous aurez à créer le Servlet de contrôle du flot de navigation ainsi que le fichier web.xml qui appellera les bons servlets et qui déclarera les variables d’initialisation nécessaires. Voici la liste des fichiers importants qui vous dont donnés et leur rôle. 
 
+* *Dossier* src\main\webapp
+  * Dossier servant à contenir le .war de l'application 
 * *Dossier* vignettes
   * Dossier contenant des vignettes des images 
 * *Dossier* dossierUltraTopSecret
   * Dossier contenant les images originales en haute qualité
-* WatermarkServlet.java
-  * Servlet faisant l’affichage d’une image originale et y ajoutant un tatouage numérique
-* Image.java
-  * JavaBean qui contient un titre ainsi que le nom du fichier de l’image
-* Collection.java
-  * Objet contenant et initialisant les JavaBeans Image
 * Index.jsp
   * Page permettant d’entrer dans le catalogue
 * Collection.jsp
@@ -41,18 +38,31 @@ Pour ce faire, vous aurez à créer le Servlet de contrôle du flot de navigatio
 * Details.jsp
   * Fragment de page intégré par AJAX qui affiche la vignette de l’image ainsi que le lien pour afficher l’aperçu de l’image ou pour l’acheter
 * Erreur.jsp
-  * Page à afficher lorsqu’une erreur de type fichier non trouvé (404) est appelée
+  * Page à afficher lorsqu’une erreur de type fichier non trouvé (404) est appelée. Pas appelé dans le cas d'une exception côté serveur.
 
-Votre travail est donc de créer les deux fichiers suivants
+* *Dossier* src\main\java
+  * Dossier servant à contenir le code Java de l'application
+* *Dossier* ca\etsmtl\gti525\devoir1
+  * Dossier servant à contenir le code spécifique au devoir 
+* WatermarkServlet.java
+  * Servlet faisant l’affichage d’une image originale et y ajoutant un tatouage numérique
+* Image.java
+  * JavaBean qui contient un titre ainsi que le nom du fichier de l’image
+* Collection.java
+  * Objet contenant et initialisant les JavaBeans Image
+* *Dossier* launch
+  * Dossier servant à contenir la méthode Main de l'application 
+
+**Votre travail est donc de créer les deux fichiers suivants**
 
 * Web.xml
-  * Descripteur de l’application web qui fait le mapping sur les servlets et qui déclare les variables d’initialisation. 
+  * Descripteur de l’application web qui fait le mapping sur les servlets et qui déclare les variables d’initialisation. Doit être placé dans le répertoire src\main\webapp\WEB-INF.
 * AjaxServlet.java
-  * Servlet qui fait l’affichage de la liste des images, qui peut recevoir une requête AJAX pour l’affichage du fragment des détails. Doit faire partie du paquet Source avec toutes les autres classes.
+  * Servlet qui fait l’affichage de la liste des images, qui peut recevoir une requête AJAX pour l’affichage du fragment des détails. Doit faire partie du paquet Source avec toutes les autres classes. Doit être placé dans le répertoire src\main\java\ca\etsmtl\gti525\devoir1.
   
 **Étapes initiales de configuration**
 
-*Vous devez avoir un compte gratuit sur heroku.com
+*Vous devez avoir un compte gratuit sur heroku.com.
 
 *Assurez-vous que [Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html) est installé
 
