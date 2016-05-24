@@ -1,6 +1,7 @@
 #Devoir 1
 =======
 Votre nom: *Veuillez inscrire votre nom complet ici*
+
 Votre URL sur Heroku: *Veuillez fournir l'URL d'accès à Heroku ici*
 =======
 ##Correction 
@@ -50,14 +51,21 @@ Votre travail est donc de créer les deux fichiers suivants
   * Servlet qui fait l’affichage de la liste des images, qui peut recevoir une requête AJAX pour l’affichage du fragment des détails. Doit faire partie du paquet Source avec toutes les autres classes.
   
 **Étapes initiales de configuration**
+
 *Vous devez avoir un compte gratuit sur heroku.com
+
 *Assurez-vous que [Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html) est installé
+
 *Assurez-vous que [Maven 3](http://maven.apache.org/download.cgi) est installé
+
 *Reliez votre repository Github avec votre compte Heroku en appelant l'URL suivant dans votre navigateur (après avoir modifié l'URL pour y mettre le nom de votre repository de devoir) https://heroku.com/deploy?template=https://github.com/gti525/repo-personnel-NOMGITHUB-SESSION.git. Pour la case de génération de nom d'app, choisissez un nom d'application qui vous rappellera qu'il s'agit de votre devoir 1, et écrivez ce nom dans le haut de ce fichier readme. Attendez la fin du déploiement et cliquez sur le bouton pour voir votre application. L'URL devrait être appelé et vous devriez voir une page HTML avec un lien "Afficher la liste des images".
+
 *Dans Heroku, cliquez sur Personal Apps pour aller à vos applications. Cliquez sur l'application nouvellement créee.
-*Allez dans l'onglet Deploy
-*Dans la section Deployment Method, choisissez Github. Autorisez Github à se connecter à votre compte Heroku.
+
+*Dans l'onglet Deploy et la section  Deployment Method, choisissez Github. Autorisez Github à se connecter à votre compte Heroku.
+
 *Une fois connecté, choisissez dans la liste déroulante des repositories pour l'organisation GTI525, et dans le champ repo-name à droite, tapez-y le nom de votre repository de devoir et faites Search. Appuyez sur Connect pour relier votre repository Github et votre compte Heroku.
+
 *Activez les déploiements automatiques en faisant Enable Automatic Deploys dans la section suivante.
 
 Vous êtes maintenant prêt! Il est possible de tester en local en lançant l'exécution de la méthode Main, dans la classe Main située dans le paquet launch du répertoire src/main/java. Java va alors créer un serveur embarqué Tomcat et y déployer automatiquement l'application. C'est la même chose qui sera faite sur Heroku.
