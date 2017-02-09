@@ -82,7 +82,7 @@ Vous êtes maintenant prêt! Il est possible de tester en local en lançant l'ex
 
 **Remise**
 
-Les deux fichiers doivent être commités dans votre GIT personnel avant le mardi 7 juin à 18h00. 
+Les deux fichiers doivent être commités dans votre GIT personnel avant le mercredi 1er mars à 18h00. 
 
 Veuillez vous assurer d’indiquer votre nom et l'URL de votre application dans le haut de ce fichier dans l'espace réservé.
 
