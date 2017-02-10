@@ -94,4 +94,4 @@ Si l’application fonctionne comme prévu et que le code respecte les bonnes pr
 
 Si certaines parties du code ne fonctionnent pas, le code sera évalué afin de vérifier la méthode utilisée. Des commentaires seront fournis pour expliquer la cause des erreurs.
 
-Les détails de la correction de votre devoir vous seront retransmises par GIT dans le haut de ce fichier.
+Les détails de la correction de votre devoir vous seront retransmises par GIT dans le haut de ce fichier. 
