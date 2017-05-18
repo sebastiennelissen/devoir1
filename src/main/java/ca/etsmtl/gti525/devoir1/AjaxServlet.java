@@ -1,4 +1,4 @@
-package source;
+package src;
 
 import java.io.IOException;
 import java.io.File;
