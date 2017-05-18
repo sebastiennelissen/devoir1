@@ -21,15 +21,15 @@ public class AjaxServlet extends HttpServlet {
 		Collection images = new Collection();
 		 String param = req.getParameter("listeImages"); 
 		if(param==null){
- 			//premier appel d'ajax servlet, on affiche la liste d'images en appellant
- 			collections.jsp req.setAttribute("collection", images.getImages());
+ 			//premier appel d'ajax servlet, on affiche la liste d'images en appellant collections.jsp
+			req.setAttribute("collection", images.getImages());
  			RequestDispatcher rd = getServletContext().getRequestDispatcher("/collection.jsp"); 
 			rd.forward(req, res);
 		}
 		
 		 else if (param.isEmpty()) {
- 			//appel d'ajaxservlet avec un parametre vide, on affiche la page d'erreur RequestDispatcher rd = 
-			getServletContext().getRequestDispatcher("/error.jsp"); 
+ 			//appel d'ajaxservlet avec un parametre vide, on affiche la page d'erreur
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/error.jsp"); 
 			rd.forward(req, res);
 		 }
 
