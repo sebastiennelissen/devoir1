@@ -32,5 +32,5 @@ public class AjaxServlet extends HttpServlet {
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/error.jsp"); 
 			rd.forward(req, res);
 		 }
-
+	}
 }
