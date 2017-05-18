@@ -6,7 +6,7 @@
   <version>2</version>
   <packaging>jar</packaging>
   <name>Devoir 1 - GTI525</name>
-  <url>https://github.com/gti525/devoir1</url>
+  <url>https://github.com/sebastiennelissen/devoir1</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <tomcat.version>8.0.28</tomcat.version>
