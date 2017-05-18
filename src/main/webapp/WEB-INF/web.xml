@@ -7,7 +7,7 @@
 	</error-page>
 	<servlet>
   		<servlet-name>AjaxServlet</servlet-name>
-  		<servlet-class>src.main.java.ca.etsmtl.gti525.devoir1.AjaxServlet</servlet-class>
+  		<servlet-class>src.AjaxServlet</servlet-class>
   		<init-param>
 	        <param-name>Collection</param-name>
 	    	<param-value>vignettes</param-value>
@@ -21,7 +21,7 @@
   
   	<servlet>
   		<servlet-name>WatermarkServlet</servlet-name>
-  		<servlet-class>src.main.java.ca.etsmtl.gti525.devoir1.WatermarkServlet</servlet-class>
+  		<servlet-class>src.WatermarkServlet</servlet-class>
   		
   		<init-param>
 	        <param-name>Collection</param-name>
