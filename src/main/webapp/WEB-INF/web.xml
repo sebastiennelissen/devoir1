@@ -16,7 +16,7 @@
 
   	<servlet-mapping>
   		<servlet-name>AjaxServlet</servlet-name>
-  		<url-pattern>/AjaxServlet/*</url-pattern>
+  		<url-pattern>/AjaxServlet</url-pattern>
   	</servlet-mapping>
   
   	<servlet>
