@@ -35,7 +35,7 @@
 	    
 	    <init-param>
 	        <param-name>message</param-name>
-	    	<param-value>Démo! Ce texte disparaîtra lors de l'achat de l'original</param-value>
+	    	<param-value>Achète l'image si tu veux voir l'originale</param-value>
 	    </init-param>
   	</servlet>
   
