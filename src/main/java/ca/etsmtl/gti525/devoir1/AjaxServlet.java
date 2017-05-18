@@ -11,48 +11,26 @@ public class AjaxServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -8308514275340556375L;
 
-	public AjaxServlet() {
-	}
-	public synchronized void doPost(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
-		doGet(req, res);
-	}
+	public AjaxServlet() { } 
 
-	public void doGet(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
+		doGet(req, res); 
+	}
+	
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{ 
 		Collection images = new Collection();
-
-		if (!(req.getParameter("listeImages") == null || req
-				.getParameter("listeImages") == "")) {
-
-			Integer photoId = Integer.parseInt(req.getParameter("listeImages"));
-			Photo photo = images.getPhoto(photoId);
-
-			res.setContentType("text/html");
-
-			req.setAttribute("photo", photo);
-			req.setAttribute("dossierVignettes", getServletConfig()
-					.getInitParameter("dossierVignettes"));
-
-			RequestDispatcher RequetsDispatcherObj = getServletContext()
-					.getRequestDispatcher("/details.jsp");
-			RequetsDispatcherObj.include(req, res);
-
-		} else {
-			if (req.getParameter("listeImages") != null) {
-				if (req.getParameter("listeImages").isEmpty()
-						|| req.getParameter("listeImages") == "") {
-					RequestDispatcher RequetsDispatcherObj = getServletContext()
-							.getRequestDispatcher("/error.jsp");
-					RequetsDispatcherObj.forward(req, res);
-				}
-			} else {
-				req.setAttribute("collection", images.getImages());
-
-				RequestDispatcher RequetsDispatcherObj = getServletContext()
-						.getRequestDispatcher("/collection.jsp");
-				RequetsDispatcherObj.forward(req, res);
-			}
+		 String param = req.getParameter("listeImages"); 
+		if(param==null){
+ 			//premier appel d'ajax servlet, on affiche la liste d'images en appellant
+ 			collections.jsp req.setAttribute("collection", images.getImages());
+ 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/collection.jsp"); 
+			rd.forward(req, res);
 		}
+		
+		 else if (param.isEmpty()) {
+ 			//appel d'ajaxservlet avec un parametre vide, on affiche la page d'erreur RequestDispatcher rd = 
+			getServletContext().getRequestDispatcher("/error.jsp"); 
+			rd.forward(req, res);
+		 }
 
-	}
 }
