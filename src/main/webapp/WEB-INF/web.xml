@@ -7,7 +7,7 @@
 	</error-page>
 	<servlet>
   		<servlet-name>AjaxServlet</servlet-name>
-  		<servlet-class>src.main.java.ca.etsmtl.gti525.devoir1.AjaxServlet</servlet-class>
+  		<servlet-class>src.main.java.ca.etsmtl.gti525.devoir1</servlet-class>
   		<init-param>
 	        <param-name>dossierVignettes</param-name>
 	    	<param-value>vignettes</param-value>
