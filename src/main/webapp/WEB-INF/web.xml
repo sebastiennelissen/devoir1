@@ -9,7 +9,7 @@
   		<servlet-name>AjaxServlet</servlet-name>
   		<servlet-class>ca.etsmtl.gti525.devoir1.AjaxServlet</servlet-class>
   		<init-param>
-	        <param-name>Collection</param-name>
+	        <param-name>listeImages</param-name>
 	    	<param-value>listeImages</param-value>
 	    </init-param>
 	</servlet>
@@ -24,7 +24,7 @@
   		<servlet-class>ca.etsmtl.gti525.devoir1.AjaxServlet</servlet-class>
   		
   		<init-param>
-	        <param-name>Collection</param-name>
+	        <param-name>listeImages</param-name>
 	    	<param-value>listeImages</param-value>
 	    </init-param>
 	    
