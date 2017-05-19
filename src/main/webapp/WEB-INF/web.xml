@@ -10,7 +10,7 @@
   		<servlet-class>ca.etsmtl.gti525.devoir1.AjaxServlet</servlet-class>
   		<init-param>
 	        <param-name>Collection</param-name>
-	    	<param-value>vignettes</param-value>
+	    	<param-value>Collection</param-value>
 	    </init-param>
 	</servlet>
 
