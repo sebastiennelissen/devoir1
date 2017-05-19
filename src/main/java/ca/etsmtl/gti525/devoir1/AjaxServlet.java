@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class AjaxServlet  {
+public class AjaxServlet extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet  {
 
 	static final long serialVersionUID = -8308514275340556375L;
 
