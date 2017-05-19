@@ -1,4 +1,4 @@
-package src;
+package ca.etsmtl.gti525.devoir1;
 
 import java.io.IOException;
 import java.io.File;
